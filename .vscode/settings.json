@@ -1,0 +1,12 @@
+{
+    "cSpell.ignoreWords": [
+        "pyautogui",
+        "seletools"
+    ],
+    "cSpell.words": [
+        "chromedriver",
+        "pynput"
+    ],
+    "python-envs.defaultEnvManager": "ms-python.python:system",
+    "python-envs.pythonProjects": []
+}
