@@ -24,6 +24,7 @@ from selenium.webdriver.chrome.service import Service
 PATH = Service("C:\\Users\\marius\\chromedriver.exe")
 # chrome_service = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=PATH)
+
 url = "https://amionline.net/"
 
 
