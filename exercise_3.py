@@ -1,5 +1,11 @@
-# a .py file I usually create for all my projects to quickly debug and test any part of my program
-# it can also serve as a test template
+# Write a Python program using Selenium libraries that opens a Google Chrome browser, navigate to
+# “https://www.saucedemo.com/”, enter the username ‘standard_user’ in the username textbox identified
+# using relative XPath locator, enter the password ‘secret_sauce’ in the password textbox which is identified
+# using CSS selector and click on the login button using ID locator. The program should then verify that the
+# user is successfully logged in by verifying if the element ‘inventory_container’ is displayed using the
+# classname locator.
+# If the user is logged in the text ‘Login successful!’ should be displayed, if not, the text ‘Login failed!’.
+# After this verification, the browser should then close.
 
 
 # import unittest
