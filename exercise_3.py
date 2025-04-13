@@ -8,33 +8,33 @@
 # After this verification, the browser should then close.
 
 
-# import unittest
-# import urllib3
-# import requests
-# import pyautogui
-# import seletools
 import time
-# import unittest
-# from pynput.keyboard import Key, Controller
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-# from selenium.webdriver.common.by import By
-# from selenium.webdriver.common.action_chains import ActionChains
-# from selenium.webdriver.common.keys import Keys
-# from selenium.webdriver.common.alert import Alert
-# from selenium.webdriver.support.ui import WebDriverWait
-# from selenium.webdriver.support import expected_conditions as EC
-# from selenium.common.exceptions import TimeoutException
-# from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.common.by import By
 
 
 PATH = Service("C:\\Users\\marius\\chromedriver.exe")
-# chrome_service = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=PATH)
 
 url = "https://www.saucedemo.com/"
 user_name = "standard_user"
 password = "secret_sauce"
 
-driver.get(url)
-time.sleep(100)
+def login_test():
+    driver.get(url)
+    user_field = driver.find_element(By.XPATH, '//*[@id="user-name"]')
+    user_field.send_keys(user_name)
+    password_field = driver.find_element(By.CSS_SELECTOR, '#password')
+    password_field.send_keys(password)
+    driver.find_element(By.XPATH, '//*[@id="login-button"]').click()
+    expected_element = driver.find_element(By.CLASS_NAME, 'inventory_container')
+
+    if expected_element.get_attribute("id") == "inventory_container":
+            print("Login successful!")
+    else:
+            print("Login failed!")
+
+
+if __name__ == '__main__':
+    login_test()

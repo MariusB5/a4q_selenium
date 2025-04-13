@@ -7,13 +7,10 @@ from selenium.webdriver.chrome.service import Service
 
 
 PATH = Service("C:\\Users\\marius\\chromedriver.exe")
-# if using webdriver_manager lib, it can handle downloading/updating chromedriver automatically
-# chrome_service = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=PATH)
 
 url = "https://www.saucedemo.com/"
 
 
 driver.get(url)
-time.sleep(5)  # wait 5 seconds to preview the page before closing
 driver.quit()
