@@ -12,6 +12,8 @@ import time
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 
 PATH = Service("C:\\Users\\marius\\chromedriver.exe")
@@ -27,13 +29,16 @@ def login_test():
     user_field.send_keys(user_name)
     password_field = driver.find_element(By.CSS_SELECTOR, '#password')
     password_field.send_keys(password)
-    driver.find_element(By.XPATH, '//*[@id="login-button"]').click()
-    expected_element = driver.find_element(By.CLASS_NAME, 'inventory_container')
-
-    if expected_element.get_attribute("id") == "inventory_container":
+    driver.find_element(By.ID, 'login-button').click()
+    wait = WebDriverWait(driver, 10)
+    inventory_container = wait.until(EC.visibility_of_element_located((By.CLASS_NAME, 'inventory_container')))
+    
+    if inventory_container.get_attribute("id") == "inventory_container":
             print("Login successful!")
     else:
             print("Login failed!")
+    
+    driver.quit()
 
 
 if __name__ == '__main__':
