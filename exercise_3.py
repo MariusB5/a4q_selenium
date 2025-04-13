@@ -32,8 +32,9 @@ PATH = Service("C:\\Users\\marius\\chromedriver.exe")
 # chrome_service = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=PATH)
 
-url = "https://amionline.net/"
-
+url = "https://www.saucedemo.com/"
+user_name = "standard_user"
+password = "secret_sauce"
 
 driver.get(url)
 time.sleep(100)
