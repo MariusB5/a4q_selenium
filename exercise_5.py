@@ -24,11 +24,11 @@ def login_to_saucedemo():
         driver.get(url)
         user_field = driver.find_element(By.ID, 'user-name')
         user_field.send_keys(user_name)
-        password_field = driver.find_element(locate_with(By.TAG_NAME, 'input').below({By.ID:'user-name'}))
+        password_field = driver.find_element(locate_with(By.TAG_NAME, 'input').below({By.ID:'user-name'}))  # overcomplicated way to locate an element
         password_field.send_keys(password)
         driver.find_element(By.ID, 'login-button').click()
         wait = WebDriverWait(driver, 5)
-        inventory_container = wait.until(EC.visibility_of_element_located((By.CLASS_NAME, 'inventory_container')))  # overcomplicated way to locate an element
+        inventory_container = wait.until(EC.visibility_of_element_located((By.CLASS_NAME, 'inventory_container')))
         if inventory_container.get_attribute("id") == "inventory_container":
                 print("Login successful!")
         else:
