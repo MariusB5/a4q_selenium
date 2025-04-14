@@ -34,6 +34,7 @@ def login_to_saucedemo():
         # find password box using css selector and enter password
         password_field = driver.find_element(By.CSS_SELECTOR, '#password')
         password_field.send_keys(password)
+        
         # find and click the login button
         driver.find_element(By.ID, 'login-button').click()
         
@@ -41,7 +42,7 @@ def login_to_saucedemo():
         wait = WebDriverWait(driver, 5)
         inventory_container = wait.until(EC.visibility_of_element_located((By.CLASS_NAME, 'inventory_container')))
         
-         # verify if login is successful and print the result
+        # verify if login is successful and print the result
         if inventory_container.get_attribute("id") == "inventory_container":
                 print("Login successful!")
         else:
