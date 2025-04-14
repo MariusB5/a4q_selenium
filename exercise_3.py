@@ -8,7 +8,6 @@
 # After this verification, the browser should then close.
 
 
-import time
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
@@ -22,6 +21,7 @@ driver = webdriver.Chrome(service=PATH)
 url = "https://www.saucedemo.com/"
 user_name = "standard_user"
 password = "secret_sauce"
+
 
 def login_test():
     driver.get(url)

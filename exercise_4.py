@@ -2,7 +2,6 @@
 # wrapped in a function named ‘login_to_saucedemo’ which will be called to execute the test.
 
 
-import time
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
@@ -16,6 +15,7 @@ driver = webdriver.Chrome(service=PATH)
 url = "https://www.saucedemo.com/"
 user_name = "standard_user"
 password = "secret_sauce"
+
 
 def login_to_saucedemo():
     try:

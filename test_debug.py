@@ -31,4 +31,4 @@ url = "https://amionline.net/"
 
 
 driver.get(url)
-time.sleep(100)
+time.sleep(5)
