@@ -6,6 +6,7 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.relative_locator import locate_with
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -21,9 +22,9 @@ password = "secret_sauce"
 def login_to_saucedemo():
     try:
         driver.get(url)
-        user_field = driver.find_element(By.XPATH, '//*[@id="user-name"]')
+        user_field = driver.find_element(By.ID, 'user-name')
         user_field.send_keys(user_name)
-        password_field = driver.find_element(By.CSS_SELECTOR, '#password')
+        password_field = driver.find_element(locate_with(By.TAG_NAME, 'input').below({By.ID:'user-name'}))
         password_field.send_keys(password)
         driver.find_element(By.ID, 'login-button').click()
         wait = WebDriverWait(driver, 5)
