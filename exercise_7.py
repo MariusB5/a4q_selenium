@@ -56,6 +56,9 @@ def login_to_saucedemo():
          # verify if login is successful and print the result
         if inventory_container.get_attribute("id") == "inventory_container":
                 print("Login successful!")
+                
+                # screenshots the third shop item with its description and add to cart button
+                driver.find_element(By.CSS_SELECTOR, '#inventory_container > div > div:nth-child(3)').screenshot("inventory_3.png")
         else:
                 print("Login failed!")
     
