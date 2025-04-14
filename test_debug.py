@@ -1,5 +1,5 @@
 # a .py file I usually create for all my projects to quickly debug and test any part of my program
-# it can also serve as a test template
+# it can also serve as a template
 
 
 # import unittest
@@ -18,6 +18,7 @@ from selenium.webdriver.chrome.service import Service
 # from selenium.webdriver.common.alert import Alert
 # from selenium.webdriver.support.ui import WebDriverWait
 # from selenium.webdriver.support import expected_conditions as EC
+# from selenium.webdriver.support.relative_locator import locate_with
 # from selenium.common.exceptions import TimeoutException
 # from webdriver_manager.chrome import ChromeDriverManager
 
