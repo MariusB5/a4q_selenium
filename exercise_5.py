@@ -58,6 +58,7 @@ def login_to_saucedemo():
         # close the browser
         driver.quit()
 
+
 # run the test
 if __name__ == '__main__':
         login_to_saucedemo()
