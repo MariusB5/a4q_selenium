@@ -58,7 +58,7 @@ def login_to_saucedemo():
                 print("Login successful!")
                 
                 # screenshots the third shop item with its description and add to cart button
-                driver.find_element(By.CSS_SELECTOR, '#inventory_container > div > div:nth-child(3)').screenshot("inventory_3.png")
+                driver.find_element(By.XPATH, '//*[@id="inventory_container"]/div/div[3]').screenshot("inventory_3.png")
                 
                 # alternatively
                 """inventory_item = driver.find_element(By.XPATH, ".//*[@class='inventory_item'][3]")
