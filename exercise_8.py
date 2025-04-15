@@ -15,13 +15,14 @@ from selenium.webdriver.support.relative_locator import locate_with
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.window import WindowTypes
 import time
 
 
 # runs the chromedriver without opening a browser
 options = Options()
-# options.add_argument("--headless=new")
-# options.add_argument("--window-size=1920-1080")
+options.add_argument("--headless=new")
+options.add_argument("--window-size=1920-1080")
 
 # create a chrome driver instance
 PATH = Service("C:\\Users\\marius\\chromedriver.exe")
@@ -57,11 +58,6 @@ def login_to_saucedemo():
         # find and click the login button
         driver.find_element(By.ID, 'login-button').click()
         
-        # opens a new tab with the cart page, then switches back to the original tab
-        driver.execute_script("window.open('https://www.saucedemo.com/cart.html', '_blank');")
-        driver.switch_to.window(driver.window_handles[1])
-        driver.switch_to.window(driver.window_handles[0])
-        
         # wait for the inventory container to be displayed
         wait = WebDriverWait(driver, 10)
         inventory_container = wait.until(EC.visibility_of_element_located((By.CLASS_NAME, 'inventory_container')))
@@ -69,6 +65,17 @@ def login_to_saucedemo():
          # verify if login is successful and print the result
         if inventory_container.get_attribute("id") == "inventory_container":
                 print("Login successful!")
+                
+                # using native selenium
+                original_tab = driver.current_window_handle  # save the current tab
+                driver.switch_to.new_window(WindowTypes.TAB)  # open a new tab
+                driver.get('https://www.saucedemo.com/cart.html')  # navigate to cart webpage
+                driver.switch_to.window(original_tab)  # switch back to original tab
+                
+                # using javascript: open a new tab with the cart page, then switch back to the original tab
+                """driver.execute_script("window.open('https://www.saucedemo.com/cart.html', '_blank');")
+                driver.switch_to.window(driver.window_handles[1])
+                driver.switch_to.window(driver.window_handles[0])"""
                 
                 # screenshots the third shop item with its description and add to cart button
                 driver.find_element(By.XPATH, '//*[@id="inventory_container"]/div/div[3]').screenshot("inventory_three.png")
