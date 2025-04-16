@@ -81,3 +81,5 @@ def login_to_saucedemo():
 # run the test
 if __name__ == '__main__':
         login_to_saucedemo()
+
+product_filter = driver.find_element(By.CLASS_NAME, "product_sort_container")
