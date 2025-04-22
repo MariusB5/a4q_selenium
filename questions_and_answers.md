@@ -11,11 +11,7 @@ D) To replace the test development phase
 
 <details>
 
-<<<<<<< HEAD
 <summary>Answer</summary>
-=======
-<summary>Reveal answer</summary>
->>>>>>> 305ad50d1cbf4c3966926aeda73e8d3e40ff75d1
 
 **B**
 
