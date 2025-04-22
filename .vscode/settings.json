@@ -4,6 +4,7 @@
         "seletools"
     ],
     "cSpell.words": [
+        "autouse",
         "chromedriver",
         "pynput",
         "saucedemo"

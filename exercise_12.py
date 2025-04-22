@@ -36,11 +36,8 @@ from selenium.webdriver.support.relative_locator import locate_with
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
+import pytest
 
-
-# create a chrome driver instance
-PATH = Service("C:\\Users\\marius\\chromedriver.exe")
-driver = webdriver.Chrome(service=PATH)
 
 # test data
 url = "https://www.saucedemo.com/"
@@ -48,8 +45,23 @@ user_name = "standard_user"
 password = "secret_sauce"
 
 
+# pytest configuration
+@pytest.fixture(scope='session', autouse=True)
+def setup_reporting():
+    config = {
+    'report_title': 'Test Report for Saucedemo',
+    'output_file': 'report.html'
+    }
+    return config
+@pytest.fixture(scope='function')
+def driver():
+    PATH = Service("C:\\Users\\marius\\chromedriver.exe")
+    driver = webdriver.Chrome(service=PATH)
+    yield driver
+
+
 # test function definition
-def login_to_saucedemo():
+def test_login_to_saucedemo(setup_reporting, driver):
     # start time for the test
     start = time.time()
     
@@ -126,4 +138,4 @@ def login_to_saucedemo():
 
 # run the test
 if __name__ == '__main__':
-        login_to_saucedemo()
+        test_login_to_saucedemo()
