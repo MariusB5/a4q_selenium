@@ -36,6 +36,11 @@ def login_to_saucedemo():
             time.sleep(1)
             time_limit += 1
         
+        # hard assertion for page title
+        title = driver.title
+        assert title == "Swag Labs", f"Assertion Fail: Title is not Swag Labs, it is {title}."
+        print("Assertion Pass: Title is Swag Labs.")
+                
         # find username box using id locator and enter username
         user_field = driver.find_element(By.ID, 'user-name')
         user_field.send_keys(user_name)
