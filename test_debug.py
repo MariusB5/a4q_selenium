@@ -23,7 +23,7 @@ from selenium.webdriver.chrome.service import Service
 # from webdriver_manager.chrome import ChromeDriverManager
 
 
-PATH = Service("C:\\Users\\marius\\chromedriver.exe")
+PATH = Service("C:\\Users\\marius\\webdriver\\chromedriver.exe")
 # if using webdriver_manager lib, it can handle downloading/updating chromedriver automatically
 # chrome_service = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=PATH)

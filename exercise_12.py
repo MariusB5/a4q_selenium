@@ -55,7 +55,7 @@ def setup_reporting():
     return config
 @pytest.fixture(scope='function')
 def driver():
-    PATH = Service("C:\\Users\\marius\\chromedriver.exe")
+    PATH = Service("C:\\Users\\marius\\webdriver\\chromedriver.exe")
     driver = webdriver.Chrome(service=PATH)
     yield driver
 

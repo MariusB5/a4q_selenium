@@ -12,7 +12,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 # create a chrome driver instance
-PATH = Service("C:\\Users\\marius\\chromedriver.exe")
+PATH = Service("C:\\Users\\marius\\webdriver\\chromedriver.exe")
 driver = webdriver.Chrome(service=PATH)
 
 # test data

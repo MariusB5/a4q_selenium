@@ -25,7 +25,7 @@ options.add_argument("--headless=new")
 options.add_argument("--window-size=1920-1080")
 
 # create a chrome driver instance
-PATH = Service("C:\\Users\\marius\\chromedriver.exe")
+PATH = Service("C:\\Users\\marius\\webdriver\\chromedriver.exe")
 driver = webdriver.Chrome(service=PATH, options=options)
 
 # test data
