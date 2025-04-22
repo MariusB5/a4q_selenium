@@ -22,7 +22,7 @@ Note:
     pytest <script name> --html=report.html
 
 For example: in the directory
-“C:\Users\User\PycharmProjects\pyTestAutomation\Python Exercises>” in the
+“C:\\Users\\User\\PycharmProjects\\pyTestAutomation\\Python Exercises>” in the
 PyCharm Terminal, run the below command:
 pytest Exercises.py --html=report.html
 """
@@ -136,6 +136,4 @@ def test_login_to_saucedemo(setup_reporting, driver):
         print(f"Test duration is: {(end - start) * 1000:.2f} ms.")
 
 
-# run the test
-if __name__ == '__main__':
-        test_login_to_saucedemo()
+# to execute the test, run the following command from the terminal 'pytest exercise_12.py --html=report.html'
