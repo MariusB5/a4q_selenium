@@ -1,6 +1,6 @@
 # A4Q Certified Selenium 4 Tester Foundation
 
-## Mock Exam Questions and Answers (Released 2025)
+## Mock Exam - Questions and Answers - Release 2025
 
 1. What is the primary objective of implementing test automation in software testing?
 
