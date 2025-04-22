@@ -56,6 +56,14 @@ def login_to_saucedemo():
         if inventory_container.get_attribute("id") == "inventory_container":
                 print("Login successful!")
                 
+                # soft assertion for product filter
+                try:
+                    product_filter = driver.find_element(By.CLASS_NAME, "product_sort_container")  # locate the product filter
+                    assert product_filter.is_displayed(), "Product filter is not displayed."  # assert is a built-in Python function; is_displayed() is a Selenium function
+                    print("Assertion Pass: Product filter is displayed.")
+                except AssertionError as e:
+                    print(str(e))
+
                 # screenshots the third shop item with its description and add to cart button
                 driver.find_element(By.XPATH, '//*[@id="inventory_container"]/div/div[3]').screenshot("inventory_3.png")
                 
@@ -81,5 +89,3 @@ def login_to_saucedemo():
 # run the test
 if __name__ == '__main__':
         login_to_saucedemo()
-
-product_filter = driver.find_element(By.CLASS_NAME, "product_sort_container")
