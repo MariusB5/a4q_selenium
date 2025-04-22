@@ -10,8 +10,8 @@ C) To eliminate the need for human testers entirely
 D) To replace the test development phase
 
 <details>
-    <summary>Click to reveal answer</summary>
-
- **B**
-
+<summary>
+Reveal answer
+</summary>
+**B**
 </details>
