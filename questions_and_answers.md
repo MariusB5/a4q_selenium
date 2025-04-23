@@ -34,3 +34,21 @@ strategy?
   **C**
   
 </details>
+
+<br>
+
+3. [Question here]
+
+   A) [Option A]  
+   B) [Option B]  
+   C) [Option C]  
+   D) [Option D]
+
+<details>
+  <summary>Answer</summary>
+  
+  **[Correct answer]**
+  
+</details>
+
+<br>
