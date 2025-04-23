@@ -16,7 +16,6 @@
   
 </details>
 
-
 2. How do manual and automated testing complement each other in a software testing
 strategy?
 
