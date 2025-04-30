@@ -16,5 +16,5 @@ Additionally, you’ll find the official study materials provided for free on th
 
 - **Language**: Python
 - **Framework**: Selenium
-- **Test Runner**: unittest
+- **Test Runner**: pytest
 - **Browser Automation**: ChromeDriver
