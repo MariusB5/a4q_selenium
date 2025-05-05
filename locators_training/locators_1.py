@@ -4,6 +4,8 @@
 # C) The alt attribute provides a text description of the image, which is important for accessibility.
 # D) The src attribute is used to specify the alternative text for the image.
 
+# Answer: C
+
 
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service

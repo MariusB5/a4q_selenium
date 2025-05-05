@@ -5,6 +5,8 @@
 # C) /library/book/author[year>2000]
 # D) //book[year>2000][author]
 
+# Answer: B
+
 
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
