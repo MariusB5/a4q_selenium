@@ -25,3 +25,4 @@ authors = driver.find_elements(By.XPATH, '//book[year>2000]/author')
 for author in authors:
     print(author.text)
 time.sleep(5)
+driver.quit()
