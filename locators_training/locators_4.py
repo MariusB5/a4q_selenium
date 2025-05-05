@@ -25,5 +25,5 @@ driver.get(file_path)
 titles = driver.find_elements(By.XPATH, '//book/booktitle')
 for title in titles:
     print(title.text)
-# time.sleep(5)
+time.sleep(5)
 driver.quit()
