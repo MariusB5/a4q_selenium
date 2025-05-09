@@ -20,5 +20,5 @@ file_path = "file:///C:/Users/marius/a4q_selenium/locators_training/locators_1.h
 
 
 driver.get(file_path)
-time.sleep(10)
+time.sleep(5)
 driver.quit()
